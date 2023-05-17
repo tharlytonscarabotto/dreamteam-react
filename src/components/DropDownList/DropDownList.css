@@ -1,0 +1,13 @@
+.drop-down label{
+    display: block;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.drop-down select{
+    padding: 20px;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    box-sizing: border-box;
+}
