@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Button from '../Button'
 import DropDownList from '../DropDownList'
 import TextInput from '../TextInput'
@@ -16,20 +17,55 @@ const Form = () => {
         'LW'
     ]
 
+    const [name, setName] = useState('')
+    const [team, setTeam] = useState('')
+    const [country, setCountry] = useState('')
+    const [image, setImage] = useState('')
+    const [position, setPosition] = useState('')
+
     const onSave = (event) => {
         event.preventDefault()
-        console.log("Form foi ok")
+        console.log("Form foi ok =>", name, team, country, image, position)
     }
 
     return (
         <section className='form'>
             <form onSubmit={onSave}>
                 <h2>Fill the information to put a player on your Dream Team</h2>
-                <TextInput required={true} label="Name" placeholder="name" />
-                <TextInput required={true} label="Team" placeholder="current team" />
-                <TextInput required={true} label="Country" placeholder="nationality" />
-                <TextInput label="Image" placeholder="image address" />
-                <DropDownList required={true} label="Position" position={positions}/>
+                <TextInput 
+                    required={true} 
+                    label="Name" 
+                    placeholder="name" 
+                    value={name}
+                    afterChanged={value => setName(value)}
+                />
+                <TextInput 
+                    required={true} 
+                    label="Team" 
+                    placeholder="current team" 
+                    value={team}
+                    afterChanged={value => setTeam(value)}
+                />
+                <TextInput 
+                    required={true} 
+                    label="Country" 
+                    placeholder="nationality"
+                    value={country}
+                    afterChanged={value => setCountry(value)} 
+                />
+                <TextInput 
+                    label="Image" 
+                    placeholder="image address" 
+                    value={image}
+                    afterChanged={value => setImage(value)}
+                />
+                <DropDownList 
+                    required={true} 
+                    label="Position" 
+                    position={positions}
+                    value={position}
+                    afterChanged={value => setPosition(value)}
+                />
                 <Button>
                     Add Player
                 </Button>
