@@ -4,18 +4,7 @@ import DropDownList from '../DropDownList'
 import TextInput from '../TextInput'
 import './Form.css'
 
-const Form = () => {
-
-    const positions = [
-        'GK',
-        'RB',
-        'CB',
-        'LB',
-        'CM',
-        'RW',
-        'ST',
-        'LW'
-    ]
+const Form = (props) => {
 
     const [name, setName] = useState('')
     const [team, setTeam] = useState('')
@@ -25,7 +14,13 @@ const Form = () => {
 
     const onSave = (event) => {
         event.preventDefault()
-        console.log("Form foi ok =>", name, team, country, image, position)
+        props.playerInserted({
+            name,
+            team,
+            country,
+            image,
+            position
+        })
     }
 
     return (
@@ -62,7 +57,7 @@ const Form = () => {
                 <DropDownList 
                     required={true} 
                     label="Position" 
-                    position={positions}
+                    position={props.positions}
                     value={position}
                     afterChanged={value => setPosition(value)}
                 />
