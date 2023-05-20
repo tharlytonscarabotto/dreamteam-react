@@ -1,0 +1,38 @@
+.player-card{
+    width: 800px;
+}
+
+.player-card .header{
+    background-color: #f0f0f0;
+    border-radius: 10px 10px 0 0;
+}
+
+.player-card .header img{
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    bottom: -50px;
+}
+
+.player-card .footer{
+    background: #FFFFFF;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.player-card .footer h4{
+    color: #338304;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+}
+
+.player-card .footer h5{
+    font-size: 18px;
+    line-height: 0;
+    color: #212121;
+    padding: 0 16px;
+}
+

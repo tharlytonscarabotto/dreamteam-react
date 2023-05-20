@@ -40,7 +40,13 @@ function App() {
       <Banner />
       <Form positions={fieldPositions.map(position => position.name)} playerInserted={player => newPlayerAdded(player)}/>
 
-      {fieldPositions.map(position => <FieldPositions key={position.name} position={position.name} backgroundColor={position.secondaryColor} cardColor={position.primaryColor}/>)}
+      {fieldPositions.map(position => <FieldPositions 
+        key={position.name} 
+        position={position.name} 
+        backgroundColor={position.secondaryColor} 
+        cardColor={position.primaryColor}
+        players={players}
+      />)}
 
     </div>
   );
