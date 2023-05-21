@@ -45,7 +45,7 @@ function App() {
         position={position.name} 
         backgroundColor={position.secondaryColor} 
         cardColor={position.primaryColor}
-        players={players}
+        players={players.filter(player => player.position === position.name)}
       />)}
 
     </div>
