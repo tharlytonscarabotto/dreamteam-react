@@ -3,7 +3,7 @@ import './PlayerCard.css'
 const PlayerCard = (props) => {
     return(
         <div className='player-card'>
-            <div className='header'>
+            <div className='header'style={{backgroundColor: props.cardColor}}>
                 <img src={props.image} alt={props.name} />
             </div>
             <div className='footer'>

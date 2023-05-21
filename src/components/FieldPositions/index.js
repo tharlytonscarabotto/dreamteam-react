@@ -6,7 +6,7 @@ const FieldPositions = (props)=>{
         <section className='field-positions' style={{backgroundColor: props.backgroundColor}}>
             <h3 style={{borderColor: props.cardColor}}>{props.position}</h3>
             <div className='card'>
-                {props.players.map(player => <PlayerCard name={player.name} team={player.team} country={player.country} image={player.image}/>)}
+                {props.players.map(player => <PlayerCard cardColor={props.cardColor} key={player.name} name={player.name} team={player.team} country={player.country} image={player.image}/>)}
             </div>
         </section>
     )   
